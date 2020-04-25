@@ -47,7 +47,7 @@ def verify_pw(username, password):
 	if not user_exists(username):
 		return False
 
-	hashed_pw = users.find({"Username": username})[0]["password"]
+	hashed_pw = users.find({"Username": username})[0]["Password"]
 
 	return bcrypt.hashpw(password.encode('utf8'), hashed_pw) == hashed_pw
 
