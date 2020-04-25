@@ -101,6 +101,9 @@ class Detect(Resource):
 			"ratio": ratio,
 			"msg": "similarity score calculated successfully"
 		}
+
+		users.update({"Username": username}, {"$set": {"Tokens": num_tokens-1}})
+		
 		return jsonify(ret_json)
 
 
