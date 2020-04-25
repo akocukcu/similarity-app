@@ -12,7 +12,7 @@ db = client.SimilarityDB
 users = db["Users"]
 
 def user_exists(username):
-	not users.find({"Username": username}).count() == 0
+	return not (users.find({"Username": username}).count() == 0)
 
 class Register(Resource):
 	def post(self):
